@@ -8,8 +8,7 @@ Suppose you invest d dollars per month in an asset, such as a stock, which pays 
 
 # Examples
 ```julia-repl
-# Growth of $100 invested per month for 30 years 
-# in an asset paying 5% per year.
+julia> # Growth of investing d dollars per month for Y years in an asset paying 5% interest.
 julia> dates, values = G.percentage_growth(100,5,30);
 julia> scatter(dates, values, xlabel="Date", ylabel="Value in dollars",legend=false,formatter=:plain)
 ```
@@ -40,7 +39,7 @@ Calculate the monthly payment and total cost of borrowing d dollars for Y years 
 
 # Examples
 ```julia-repl
-# Monthly payment and total cost of a $1000 loan
+# Monthly payment and total cost of a 1000 dollar loan
 # at 5% interest for 4 years.
 julia> payment, cost = total_cost(1000.0,5,4)
 ```
@@ -64,3 +63,4 @@ function total_cost(d::Real, p::Real, Y::Real)
     return payment, full_cost
 end
 
+nothing
